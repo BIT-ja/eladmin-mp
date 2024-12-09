@@ -1,6 +1,6 @@
 import router from './routers'
 import store from '@/store'
-import Config from '@/settings'
+// import Config from '@/settings'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css'// progress bar style
 import { getToken } from '@/utils/auth' // getToken from cookie
@@ -12,9 +12,9 @@ NProgress.configure({ showSpinner: false })// NProgress Configuration
 const whiteList = ['/login']// no redirect whitelist
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.title) {
-    document.title = to.meta.title + ' - ' + Config.title
-  }
+  // if (to.meta.title) {
+  //   document.title = to.meta.title + ' - ' + Config.title
+  // }
   NProgress.start()
   if (getToken()) {
     // 已登录且要跳转的页面是登录页

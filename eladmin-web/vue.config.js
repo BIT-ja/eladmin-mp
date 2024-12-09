@@ -83,6 +83,14 @@ module.exports = {
         symbolId: 'icon-[name]'
       })
       .end()
+    config.module
+      .rule('images')
+      .use('url-loader')
+      .loader('url-loader')
+      .options({
+        limit: 1024,
+        esModule: false
+      })
 
     // set preserveWhitespace
     config.module
